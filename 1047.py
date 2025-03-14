@@ -9,7 +9,3 @@ class Solution:
         s = ''.join(stack)
         print(s)
         return s
-
-example = 'azxxzy'
-solution = Solution()
-solution.removeDuplicates(example)
