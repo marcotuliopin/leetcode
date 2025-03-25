@@ -6,16 +6,15 @@ class Solution:
         def countCombinations(target, nums, dp):
             if target in dp:
                 return dp[target]
+            if target == 0:
+                return 1
 
             combinations = 0
             for num in nums:
                 if num > target: 
                     break
 
-                if num == target:
-                    combinations += 1
-                else:
-                    combinations += countCombinations(target - num, nums, dp)
+                combinations += countCombinations(target - num, nums, dp)
 
             dp[target] = combinations
             return dp[target]
